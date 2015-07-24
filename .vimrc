@@ -214,11 +214,12 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive' " Git wrapper so awesome
 Plugin 'kien/ctrlp.vim' " Fuzzy file, buffer, mru, tag, etc finder
 Plugin 'scrooloose/nerdtree' " A tree explorer plugin for vim.
-Plugin 'tpope/vim-commentary' " commentary.vim: comment stuff out
+Plugin 'tomtom/tcomment_vim' " An extensible & universal comment vim-plugin that also handles embedded filetypes
 Plugin 'editorconfig/editorconfig-vim'  " EditorConfig plugin for Vim
 Plugin 'mattn/emmet-vim' " emmet for vim
 Plugin 'csscomb/vim-csscomb' " CSScomb plugin for Vim. Tool for sorting CSS properties in specific order
 Plugin 'bling/vim-airline' " lean & mean status/tabline for vim that's light as air
+Plugin 'airblade/vim-gitgutter' " A Vim plugin which shows a git diff in the gutter
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -232,3 +233,6 @@ autocmd vimenter * NERDTree
 
 " Stick this in your vimrc to open NERDTree with Ctrl+n
 map <C-n> :NERDTreeToggle<CR>
+
+" How can I close vim if the only window left open is a NERDTree?
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
