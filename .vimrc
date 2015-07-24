@@ -226,3 +226,9 @@ filetype plugin indent on    " required
 
 " Map bc to run CSScomb. bc stands for beautify css
 autocmd BufWritePre,FileWritePre *.css,*.less,*.scss,*.sass silent! :CSScomb<CR>
+
+" How can I open a NERDTree automatically when vim starts up?
+autocmd vimenter * NERDTree
+
+" Stick this in your vimrc to open NERDTree with Ctrl+n
+map <C-n> :NERDTreeToggle<CR>
