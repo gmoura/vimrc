@@ -1,6 +1,9 @@
 " Syntax
 syntax on
 
+" Mouse
+set mouse=a
+
 set lazyredraw
 set t_Co=256
 
